@@ -7,7 +7,7 @@ import Render from "components/generate_page/render";
 import Widgets from "components/generate_page/widgets";
 import { useEffect } from "react";
 import { useAppDispatch } from "hooks/store";
-import { initial } from "slices/componentNames";
+import { initial } from "reducers/componentNames";
 
 interface HomeProps {
   componentNames: Array<string>;
@@ -16,7 +16,18 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ componentNames }: HomeProps) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
+    // const { registerMicroApps, setDefaultMountApp, start } = require("qiankun");
+
     dispatch(initial(componentNames));
+    // registerMicroApps([
+    //   {
+    //     name: "render",
+    //     entry: "//localhost:3001",
+    //     container: "#render",
+    //     activeRule: "/generate",
+    //   },
+    // ]);
+    // start();
   }, []);
   return (
     <div className={styles.container}>
