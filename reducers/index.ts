@@ -1,6 +1,6 @@
-import  componentNames from "./componentNames";
+import  generate from "./generate";
 
 
 export default{
-  componentNames
+  generate,
 }
